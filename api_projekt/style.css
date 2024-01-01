@@ -1,0 +1,9 @@
+.chart {
+    height: 400px;
+}
+.innerTable{
+    max-height: 400px;
+}
+body{
+    background-color: #383c44;
+}

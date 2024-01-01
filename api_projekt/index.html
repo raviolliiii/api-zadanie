@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/5901c043f1.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.canvasjs.com/ga/canvasjs.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+
+    <body>
+        <nav class="sticky-top navbar bg-light-subtle" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="NBEPE" width="70">
+                </a>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a id="openComparison" data-open="false" class="nav-link active off">Porównanie
+                            <svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-arrow-down' viewBox='0 0 20 20'>
+                                <path fill-rule='evenodd' d='M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1'/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id='comparisonChart' class="chart"></div>
+        <div>
+            <table class='table table-dark table-hover container-fluid'>
+                <thead>
+                    <tr>
+                        <td>
+                            <input id="codeSearch" type="text" placeholder="Kod" class="form-control-sm m-2 searchInput container-fluid">
+                        </td>
+                        <td>
+                            <input id="currencySearch" type="text" placeholder="Waluta" class="form-control-sm m-2 searchInput container-fluid">
+                        </td>
+                        <td class="row justify-content-evenly">
+                            <input id="midStart" type="number" placeholder="Od" class="form-control-sm col-12 col-md-5 m-2 searchInput">
+                            <input id="midEnd" type="number" placeholder="Do" class="form-control-sm col-12 col-md-5 m-2 searchInput">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th id="codeSort" class="col-2">
+                            Kod
+                            <i class="fa-solid fa-sort float-end sortIcon"></i>
+                        </th>
+                        <th id="currencySort" class="col-8">
+                            Waluta
+                            <i class="fa-solid fa-sort float-end sortIcon"></i>
+                        </th>
+                        <th id="midSort" class="col-2">
+                            Kurs średni
+                            <i class="fa-solid fa-sort float-end sortIcon"></i>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id='content'></tbody>
+            </table>
+        </div>
+        <footer class="bg-light-subtle h-100"></footer>
+    </body>
+</html>
+
